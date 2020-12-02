@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<div>
+<section class="contenedor Quienes-somos">
+    <h2 class="titulo">Quienes somos</h2>
+    <div class="contenedor-Quienes-somos">
+        <img src="{% static 'core/img/QuienesSomos.png' %}" alt="" class="imagen-quienesSomos">
+        <div class="contenido-texto">
+            <h3><span>1</span>El lavado más rapido!</h3>
+            <p>Nos comprometemos a otorgar el servicio de mayor velocidad y calidad, su tiempo es importante por lo cual 
+                demostraremos que somos capaces de otorgar el servicio mas rapido y de calidad de toda la region!
+            </p>
+            <h3><span>2</span>Accesible y de confianza!</h3>
+            <p>No solo somos un servicio rapido, sino tambien accesible y transparente, podra encontrarnos en alguna de nuestras muchas
+                sucursales dentro de Santiago, todas cumpliran con nuestro lema de "Velocidad y Calidad"!
+            </p>
+        </div>
+    </div>
+    <div class="clientes contenedor">
+        <h2 class="titulo">Lo que opinan algunos de nuestros clientes</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'core/img/face1.jpg' %}" alt="">
+                <div class="contenido-texto-card">
+                    <h4>Julio Cesar</h4>
+                    <p>Un servicio excepcional, muy rapido y efectivo, quede completamente satisfecho y los
+                        trabajadores son muy amables.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'core/img/face2.jpg' %}" alt="">
+                <div class="contenido-texto-card">
+                    <h4>Gustavo Lux</h4>
+                    <p>Realmente me sorprendio lo rapido que trabajan aqui, la espera fue muy corta y quede
+                        completamente satisfecho!.</p>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="sobre-nosotros">
+    <div class="contenedor">
+        <center>
+            <h2 class="titulo">Sobre nosotros</h2>
+            <div class="servicio-cont">
+                <div class="nosotros-ind">
+                    <img src="{% static 'core/img/us1.png' %}" alt="">
+                    <h3>Nuestros empleados</h3>
+                    <p>Nuestros empleados estaran contentos de atenderlo con una gran sonrisa!</p>
+                </div>
+            </div>
+            <div class="nosotros-ind">
+                <img src="{% static 'core/img/us2.png' %}" alt="">
+                <h3>Sucursales</h3>
+                <p>Tenemos muchas sucursales en varias comunas de Santiago!</p>
+            </div>
+            <div class="nosotros-ind">
+                <img src="{% static 'core/img/us3.png' %}" alt="">
+                <h3>Horario de servicio</h3>
+                <p>Nuestras sucursales funcionan las 24 horas del dia!</p>
+        </center>
+    </div>
+    </div>
+</section>
+</div>
+{% endblock %}

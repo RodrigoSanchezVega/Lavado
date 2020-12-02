@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<link href="{% static 'core/dist/plugins/lightbox2/dist/css/lightbox.min.css' %}" rel="stylesheet" />
+<link href="{% static 'core/dist/plugins/lightbox2/js/lightbox.min.js' %}" rel="stylesheet" />
+<section class="galeria">
+    <style>
+        .galeria{
+            padding-bottom: 50px;
+            text-align-last: center;           
+        }
+    </style>
+        <center>
+        <section class="galeria">
+            <h3 class="titulo">Galeria de servicios!</h3>
+        </section>
+        </center>
+            
+
+<center>
+    <style>
+        .contenedor{
+            margin: 10px;
+        }
+        .contenedor img{
+            width: 200px;
+            height: 200px;
+        }
+        .contenedor img:hover{
+            cursor: pointer;
+            border: solid 2px goldenrod;
+
+        }
+        
+    </style>
+        <div class="contenedor">
+        <a href="{% static 'core/img/galeria1.jpg' %}" data-lightbox="carrusel1" data-title="Auto lavado">
+        <img src="{% static 'core/img/galeria1.jpg' %}" alt="">
+        </a>    
+        <a href="{% static 'core/img/galeria2.jpg' %}" data-lightbox="carrusel1" data-title="Servicio de enjuagados">
+        <img src="{% static 'core/img/galeria2.jpg' %}" alt="">
+        </a>   
+        <a href="{% static 'core/img/galeria3.jpg' %}" data-lightbox="carrusel1" data-title="Limpieza completa">
+        <img src="{% static 'core/img/galeria3.jpg' %}" alt="">
+        </a>   
+        <a href="{% static 'core/img/galeria4.jpg' %}" data-lightbox="carrusel1" data-title="Estacionamientos">
+        <img src="{% static 'core/img/galeria4.jpg' %}" alt="">
+        </a>
+        <a href="{% static 'core/img/galeria5.jpg' %}" data-lightbox="carrusel1" data-title="Personal del autolavado">
+        <img src="{% static 'core/img/galeria5.jpg' %}" alt="">
+        </a>    
+        <a href="{% static 'core/img/galeria6.jpg' %}" data-lightbox="carrusel1" data-title="Personal limpiando">
+        <img src="{% static 'core/img/galeria6.jpg' %}" alt="">
+        </a>   
+        <a href="{% static 'core/img/galeria7.jpg' %}" data-lightbox="carrusel1" data-title="Lavado intensivo">
+        <img src="{% static 'core/img/galeria7.jpg' %}" alt="">
+        </a>   
+        <a href="{% static 'core/img/galeria8.jpg' %}" data-lightbox="carrusel1" data-title="Sucursal nueva">
+        <img src="{% static 'core/img/galeria8.jpg' %}" alt="">
+        
+        </a>   
+    </div>
+</center>
+</section>
+{% endblock %}
+
+{% block js%}
+<script
+
+src="{% static 'core/dist/plugins/lightbox2/dist/js/lightbox-plus-jquery.min.js' %}">
+</script>
+{% endblock %}

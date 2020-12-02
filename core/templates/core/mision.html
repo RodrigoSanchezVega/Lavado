@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<section 
+    class="sobre-nosotros">
+    <div class="contenedor">
+        <center>
+        <h2 class="titulo">Mision y vision!</h2>
+        <div class="servicio-cont">
+            <div class="nosotros-ind">
+                <img src="{% static 'core/img/us1.png' %}" alt="">
+                <h3>Nuestra mision</h3>
+                <p>Nuestra mision es otorgar el mejor servicio posible cumpliendo con las espectativas del cliente</p>
+            </div>
+        </div>
+        <div class="nosotros-ind">
+            <img src="{% static 'core/img/us2.png' %}" alt="">
+            <h3>Nuestra vision</h3>
+            <p>Queremos que nuestra familia sea expanda por toda la comuna con multiples sucursales para mejorar aun mas el servicio</p>
+        </center>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

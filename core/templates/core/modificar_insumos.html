@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+<style>
+.formulario{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: grey;
+}   
+</style>
+<center>
+<div class = formulario>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" class="btn btn-info" value="Modificar">
+    <input type="reset" class="btn btn-danger" value="Limpiar">
+</form>
+</center>
+<center>
+    {{ mensaje }}
+</center>
+</div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

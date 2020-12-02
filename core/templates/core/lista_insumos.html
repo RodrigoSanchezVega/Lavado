@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block contenido %}
+<style>
+    .tabla_insumos{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1.1em;
+        min-width: 400px;
+        background-color: #bbbbbb;  
+    }
+    .tabla_insumos thead tr{
+        background-color: rgb(148, 145, 145);
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+    }
+    .tabla_insumos th,
+    .tabla_insumos td{
+        padding: 12px, 15px;
+    }
+
+    .tabla_insumos tbody tr{
+        border-bottom: 1px solid #bbbbbb ;
+    }
+
+    .tabla_insumos tbody tf:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+</style>
+<div class="tabla_insumos">
+    <center>
+    <h1>Insumos Disponibles</h1>
+    </center>
+    <form action="listar" method="post" class="insumoListar">
+        <center>
+        <h2 class="form-titulo">Lista de Insumos</h2>
+        </center>
+        <center>
+            <table id= tablaInsumos class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripcion</th>
+                        <th>Stock</th>
+                        <th>Tipo</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aux in listaInsumos %}
+                        <tr>
+                            <td>{{ aux.id }}</td>
+                            <td>{{ aux.nombre }}</td>
+                            <td>{{ aux.precio }}</td>
+                            <td>{{ aux.descripcion }}</td>
+                            <td>{{ aux.stock }}</td>
+                            <td>{{ aux.tipo }}</td>
+                            <td>
+                                <a href="{% url 'modificar_insumos' aux.id %}" class="btn btn-info">Modificar</a>
+                                <a onclick="confirmDelete({{ aux.id }})" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}                  
+                </tbody>
+            </table>
+        </center>
+</div>
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'core/dist/js/funcionalidades.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{% endblock %}

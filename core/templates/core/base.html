@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Flash Wash</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <link rel="shortcut icon" href="{% static 'core/img/iconoPagina.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}">Inicio</a>
+            <a href="{% url 'galeria' %}">Galeria</a>
+            <a href="{% url 'mision' %}">Mision y vision</a>
+            <a href="{% url 'ubicacion' %}">Ubicacion</a>
+            <a href="{% url 'lista_insumos2' %}">Insumos disponibles</a>
+            {% if request.user.is_staff %}
+            <a href="{% url 'registro_insumos' %}">Registro de Insumos</a>
+            <a href="{% url 'lista_insumos' %}">Editar insumos</a>
+            {% endif %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}">Logout</a> 
+
+
+        
+        </nav>
+        <section class="textos-header">
+            <h1>Bienvenido, {{request.user}} a Flash Wash!</h1>
+            <h2>el lavado de autos con el servicio más rapido!</h2>
+            <section>
+                <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
+                        preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                            style="stroke: none; fill: gold;"></path>
+                    </svg></div>
+    </header>
+    <main>
+            <div>
+            {% block js %}
+
+            {% endblock %}
+            {% block contenido %}
+
+            {% endblock %}
+            </div>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foot">
+                <h4><a href="{% url 'index' %}">Inicio</a></h4>
+                <h4><a href="{% url 'galeria' %}">Galeria</a></h4>
+                <h4></h4>
+            </div>
+            <div class="content-foot">
+                <h4><a href="{% url 'mision' %}">Mision y vision</a></h4>
+                <h4><a href="{% url 'ubicacion' %}">Ubicacion</a></h4>
+            </div>
+            <div class="content-foot">
+                <h4><a href="{% url 'registro_insumos' %}">Registro de Insumos</a></h4>
+                <h4><a href="{% url 'lista_insumos' %}">Lista de Insumos</a></h4>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Leyendas! | Rodrigo & Diego</h2>
+    </footer>
+
+
+</body>
+
+</html>
